@@ -12,6 +12,21 @@ export default class MainApp extends Component{
    }
     //adding the user
 
+    componentDidMount(){
+        const json = localStorage.getItem('users')// getting key from setItem
+        const userData = JSON.parse(json)//converting string to object again using json.parse()
+        if(userData){
+            this.setState(()=>{ //we are inserting data in array
+                return{
+                    userData
+                }
+            })
+        } 
+    }
+componentDidUpdate(){
+    const json = JSON.stringify(this.state.userData)//userdata is object(array) but local storage does not understand objects it understands only strings so using json.stringify()
+    localStorage.setItem('users',json)// setItem method has key-value pair syntax. users is key and json is value
+}
     addUser=(data)=>{
         this.setState((prevState)=>{
             return {

@@ -1,12 +1,9 @@
-import {Component} from "react";
-
-
-export default class Footer extends Component{
-    render(){
+function Footer(props){
+   
         return(
             <div>
-                <p>{this.props.fdata}</p>
+                <p>{props.fdata}</p>
             </div>
-        )
-    }
-}
+        
+)}
+export default Footer

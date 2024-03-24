@@ -1,14 +1,15 @@
-import {Component} from "react";
 
 
-export default class User extends Component{
-    render(){
+
+function User(props){
+    
         return(
             <div>
-                {this.props.userNew}
-                <button className="btn btn-warning" onClick={()=>this.props.duser(this.props.userNew)}>Delete</button>
+                {props.userNew}
+                <button className="btn btn-warning" onClick={()=>props.duser(props.userNew)}>Delete</button>
             </div>
            
         )
-    }
+    
 }
+export default User
